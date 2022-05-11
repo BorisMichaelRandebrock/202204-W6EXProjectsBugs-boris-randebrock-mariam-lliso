@@ -13,6 +13,7 @@ import {
 
 export const loadProjectsThunk = () => async (dispatch) => {
   dispatch(setLoadingOnActionCreator());
+
   try {
     const { data: projects } = await axios.get(process.env.REACT_APP_API_URL);
     dispatch(loadProjectsActionCreator(projects));
